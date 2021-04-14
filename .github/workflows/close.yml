@@ -14,5 +14,5 @@ jobs:
     - uses: KamalDGRT/Greeting-action@rks
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        issue_message: 'Thank you @${{github.actor}}! For taking out your time to raise an issue. This issue is closed now'
+        issue_message: 'Thank you @${{github.actor}}{{github.workspace}}{{github}}{{github.action_path}}! For taking out your time to raise an issue. This issue is closed now'
         PR_message: 'Thank you @${{github.actor}} for taking out your time and contributing to our project.'

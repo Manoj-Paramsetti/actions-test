@@ -11,7 +11,7 @@ jobs:
   greeting:
     runs-on: ubuntu-latest
     steps:
-    - uses: KamalDGRT/Greeting-action@rks
+    - uses: Manoj-Paramsetti/Greeting-action@rks
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         issue_message: 'Thank you for all the participants! For taking out your time to raise an issue.<br>This issue is closed by @${{github.actor + github.actor}}'

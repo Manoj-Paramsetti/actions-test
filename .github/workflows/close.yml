@@ -17,3 +17,13 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         issue_message: 'Thank you for all the participants! For taking out your time to raise an issue.<br>This issue is closed by ${{github.actor}}'
         PR_message: 'Thank you for taking out your time and contributing to our project.<br>This pull request is closed by ${{github.actor}}'
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == false }}
+    steps:
+    - uses: Manoj-Paramsetti/Greeting-action@main
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        issue_message: 'Thank you for all the participants! For taking out your time to raise an issue.<br>This issue is closed by ${{github.ac>
+        PR_message: 'Thank you for taking out your time and contributing to our project.<br>This pull request is closed by ${{github.actor}} without merging'

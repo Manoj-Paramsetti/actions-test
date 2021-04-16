@@ -2,8 +2,6 @@
 name: Greetings
 
 on:
-  issues:
-    types: [closed]
   pull_request:
     types: [closed]
 

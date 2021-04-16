@@ -10,6 +10,7 @@ on:
 jobs:
   greeting:
     runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == true }}
     steps:
     - uses: Manoj-Paramsetti/Greeting-action@main
       with:

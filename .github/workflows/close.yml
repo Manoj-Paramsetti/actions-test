@@ -1,5 +1,5 @@
-
-name: Greetings
+#new labels will be created while closing some issue so create a label for 'closed', 'expired'
+name: Merge Greetings
 
 on:
   pull_request:
@@ -13,5 +13,6 @@ jobs:
     - uses: Manoj-Paramsetti/Greeting-action@main
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        issue_message: Thank you for all the participants! For taking out your time to raise an issue.<br>This issue is closed by @${{github.actor}} 😉 
-        PR_message: 'Thank you for taking out your time and contributing to our project.<br>This pull request is closed by ${{github.actor}}'
+        issue_message: 'Thank you for taking out your time to raise an issue.<br>This issue is closed by @${{github.actor}}'
+        PR_message: '<h1>:partying_face: Congratulations :tada:</h1>Thank you for taking out your time and contributing to our project.<br>This pull request is merged and closed successfully by @${{github.actor}} 😉'
+#issue message will not work here so ignore the issue_message

@@ -9,7 +9,7 @@ on:
 jobs:
   greeting:
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.merged == true }}
+    if: ${{ github.event.pull_request.merged == false }}
 
     steps:
     - uses: KamalDGRT/Greeting-action@rks

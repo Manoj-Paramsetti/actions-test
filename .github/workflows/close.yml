@@ -26,5 +26,4 @@ jobs:
           label_1: expired
           label_2: super
           label_3: it is working
-          label_4: whoopty
 #issue message will not work here so ignore the issue_message

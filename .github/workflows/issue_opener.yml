@@ -1,0 +1,17 @@
+name: issue open Greetings
+
+on:
+  issues:
+    types: [opened]
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Manoj-Paramsetti/greets-action@main
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          issue_message: 'Thank you for taking out your time to raise an issue.<br>This issue is closed by @${{github.actor}}'
+          PR_message: '<h1>:partying_face: Congratulations :tada:</h1>Thank you for taking out your time and contributing to our project.<br>This pull request is not merged and closed successfully by @${{github.actor}} 😉'
+          label_1: opened
+          label_2: new issue
+          label_3: review

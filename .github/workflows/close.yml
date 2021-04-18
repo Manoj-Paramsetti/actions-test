@@ -1,5 +1,4 @@
-#new labels will be created while closing some issue so create a label for 'closed', 'expired'
-name: Merge Greetings
+name: Greets Action
 
 on:
   issues:
@@ -15,36 +14,14 @@ jobs:
         if: ${{ github.event.pull_request.merged == true }}
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-          PR_message: '<h1>:partying_face: Congratulations :tada:</h1>Thank you for taking out your time and contributing to our project.<br>This pull request is merged and closed successfully by @${{github.actor}} 😉'
-      - uses: Manoj-Paramsetti/greets-action@main
-        if: ${{ github.event.issues.closed == true}}
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          issue_message: 'Thank you for taking out your time to raise an issue.<br>This issue is closed by @${{github.actor}}'
-          pr_message: '<h1>:partying_face: Congratulations :tada:</h1>Thank you for taking out your time and contributing to our project.<br>This pull request is not merged and closed successfully by @${{github.actor}} 😉'
-          label_1: expired
-          label_2: closed
-          label_3: solved
-           
+          pr_message: 'Thank you for taking out time to contribute to our project. This pull request is merged and closed successfully by @${{github.actor}}'
+          label_1: 'merged'
+          label_2: 'closed'
+
       - uses: Manoj-Paramsetti/greets-action@main
         if: ${{ github.event.pull_request.merged == false}}
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          issue_message: 'Thank you for taking out your time to raise an issue.<br>This issue is closed by @${{github.actor}}'
-          pr_message: '<h1>:partying_face: Congratulations :tada:</h1>Thank you for taking out your time and contributing to our project.<br>This pull request is not merged and closed successfully by @${{github.actor}} 😉'
-          label_1: expired
-          label_2: closed
-          label_3: solved
-          
-      - uses: Manoj-Paramsetti/greets-action@main
-        if: ${{ github.event.issue.open == true }}
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          issue_message: 'Thank you for taking out your time to raise an issue.<br>This issue is closed by @${{github.actor}}'
-          PR_message: '<h1>:partying_face: Congratulations :tada:</h1>Thank you for taking out your time and contributing to our project.<br>This pull request is not merged and closed successfully by @${{github.actor}} 😉'
-          label_1: opened
-          label_2: new issue
-          label_3: review
-      
-#issue message will not work here so ignore the issue_message
+          issue_message: 'Thank you for taking your time to raise an issue.<br>This issue is closed by @${{github.actor}}'
+          pr_message: 'Thank you for taking your time to contribute in Opportunity Tracker repository. This pull request is closed successfully by @${{github.actor}}'
+          label_1: 'closed'

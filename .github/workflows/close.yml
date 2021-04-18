@@ -28,9 +28,9 @@ jobs:
           label_3: solved
            
       - uses: Manoj-Paramsetti/greets-action@main
-        if: ${{ github.event.pull_request.merged == false}}
+        if: ${{ github.event.pull_request.merged == false && github.event.issues.opened == false && github.event.issues.closed == true}}
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN && github.event.issues.opened == false && github.event.issues.closed == true}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           issue_message: 'Thank you for taking out your time to raise an issue.<br>This issue is closed by @${{github.actor}}'
           PR_message: '<h1>:partying_face: Congratulations :tada:</h1>Thank you for taking out your time and contributing to our project.<br>This pull request is not merged and closed successfully by @${{github.actor}} 😉'
           label_1: expired

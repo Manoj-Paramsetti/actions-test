@@ -11,7 +11,7 @@ jobs:
   greeting:
     runs-on: ubuntu-latest
     steps:
-      - uses: Manoj-Paramsetti/Greeting-action@main
+      - uses: Manoj-Paramsetti/greets-action@main
         if: ${{ github.event.pull_request.merged == true }}
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

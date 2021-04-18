@@ -18,7 +18,7 @@ jobs:
           issue_message: 'Thank you for taking out your time to raise an issue.<br>This issue is closed by @${{github.actor}}'
           PR_message: '<h1>:partying_face: Congratulations :tada:</h1>Thank you for taking out your time and contributing to our project.<br>This pull request is merged and closed successfully by @${{github.actor}} 😉'
       - uses: Manoj-Paramsetti/greets-action@main
-        if: ${{ github.event.pull_request.merged == false }}
+        if: ${{ github.event.pull_request.merged == false || github.event.issue.closed == true}}
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           issue_message: 'Thank you for taking out your time to raise an issue.<br>This issue is closed by @${{github.actor}}'
@@ -26,4 +26,14 @@ jobs:
           label_1: expired
           label_2: closed
           label_3: solved
+      - uses: Manoj-Paramsetti/greets-action@main
+        if: ${{ github.event.issue.opened == true }}
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          issue_message: 'Thank you for taking out your time to raise an issue.<br>This issue is closed by @${{github.actor}}'
+          PR_message: '<h1>:partying_face: Congratulations :tada:</h1>Thank you for taking out your time and contributing to our project.<br>This pull request is not merged and closed successfully by @${{github.actor}} 😉'
+          label_1: opened
+          label_2: new issue
+          label_3: review
+      
 #issue message will not work here so ignore the issue_message

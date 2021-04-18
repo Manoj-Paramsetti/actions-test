@@ -15,7 +15,6 @@ jobs:
         if: ${{ github.event.pull_request.merged == true }}
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          issue_message: 'Thank you for taking out your time to raise an issue.<br>This issue is closed by @${{github.actor}}'
           PR_message: '<h1>:partying_face: Congratulations :tada:</h1>Thank you for taking out your time and contributing to our project.<br>This pull request is merged and closed successfully by @${{github.actor}} 😉'
       - uses: Manoj-Paramsetti/greets-action@main
         if: ${{ github.event.issues.closed == true}}

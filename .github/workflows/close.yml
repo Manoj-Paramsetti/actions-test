@@ -38,7 +38,7 @@ jobs:
           label_3: solved
           
       - uses: Manoj-Paramsetti/greets-action@main
-        if: ${{ github.event.issue.opened == true }}
+        if: ${{ github.event.issue.open == true }}
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           issue_message: 'Thank you for taking out your time to raise an issue.<br>This issue is closed by @${{github.actor}}'

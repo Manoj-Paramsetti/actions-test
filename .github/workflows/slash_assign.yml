@@ -1,4 +1,4 @@
-name: Assign
+name: Slash Assign
 
 on:
   schedule:

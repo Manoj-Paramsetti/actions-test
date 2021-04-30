@@ -1,7 +1,8 @@
-#new labels will be created while closing some issue so create a label for 'closed', 'expired'
-name: Merge Greetings
+name: Greets Action
 
 on:
+  issues:
+    types: [closed]
   pull_request:
     types: [closed]
 
@@ -9,17 +10,18 @@ jobs:
   greeting:
     runs-on: ubuntu-latest
     steps:
-      - uses: Manoj-Paramsetti/Greeting-action@main
+      - uses: Manoj-Paramsetti/greets-action@main
         if: ${{ github.event.pull_request.merged == true }}
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          issue_message: 'Thank you for taking out your time to raise an issue.<br>This issue is closed by @${{github.actor}}'
-          PR_message: '<h1>:partying_face: Congratulations :tada:</h1>Thank you for taking out your time and contributing to our project.<br>This pull request is merged and closed successfully by @${{github.actor}} 😉'
-      - uses: Manoj-Paramsetti/Greeting-action@main
-        if: ${{ github.event.pull_request.merged == false }}
+          pr_message: 'Thank you for taking out time to contribute to our project. This pull request is merged and closed successfully by @${{github.actor}}'
+          label_1: 'merged'
+          label_2: 'closed'
+
+      - uses: Manoj-Paramsetti/greets-action@main
+        if: ${{ github.event.pull_request.merged == false}}
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          issue_message: 'Thank you for taking out your time to raise an issue.<br>This issue is closed by @${{github.actor}}'
-          PR_message: '<h1>:partying_face: Congratulations :tada:</h1>Thank you for taking out your time and contributing to our project.<br>This pull request is not merged and closed successfully by @${{github.actor}} 😉'
-    
-#issue message will not work here so ignore the issue_message
+          issue_message: 'Thank you for taking your time to raise an issue.<br>This issue is closed by @${{github.actor}}'
+          pr_message: 'Thank you for taking your time to contribute in Event Aggregator repository. This pull request is closed successfully by @${{github.actor}}'
+          label_1: 'closed'

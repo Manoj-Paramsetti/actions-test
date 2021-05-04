@@ -5,8 +5,7 @@ addAssignees: author
 # A list of reviewers to be added to pull requests (GitHub user name)
 # Reviewer must have admin permission
 reviewers: 
-  - AvinashMahanthi
-  - AkashM398 
+  - Manoj-Paramsetti
 
 skipKeywords:
   - wip

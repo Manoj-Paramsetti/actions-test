@@ -1,9 +1,8 @@
 #name of the task
 name: 'Add Project Lead as Reviewer for PR'
 #Starting the action on any activity in PR
-on: 
-  pull_request:
-    types: [opened]
+on: pull_request
+
 jobs:
   add-reviews:
     runs-on: ubuntu-latest

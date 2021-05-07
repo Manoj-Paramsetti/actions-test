@@ -28,5 +28,3 @@ Test 13: Fun panrom
 Test 14: Fun Panrom: Round 2
 
 Test 15: Fun Panrom: Round 3
-
-Test 15: Fun Panrom: Round 3

@@ -26,3 +26,7 @@ test 12
 Test 13: Fun panrom
 
 Test 14: Fun Panrom: Round 2
+
+
+
+Test 16: Checking the Actions.
